@@ -10,7 +10,8 @@ Time: 5:00PM - 5:45PM <br/>
 Discussion points: <br/>
 - UML Diagrams
 - Create Tasks on Jira Board
-- Conceptualizing Features <br/>
+- Remedy Project Overview
+- https://shorturl.at/K5KRk <br/>
 
 Goals for next meeting: <br/>
 - Discuss Features  - Horacio/Jack
