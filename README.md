@@ -10,8 +10,8 @@ Project description (~1 paragraph)
 
 ## Group Links (Temporary)
 
-* Jira --> https://remedy-team.atlassian.net/jira/software/projects/TR/boards/1?atlOrigin=eyJpIjoiYzVmMDE5ZDJmMGY2NGRhZDk1MDhjMzc0OWE1NTE2MTUiLCJwIjoiaiJ9
-* UML Diagram --> https://lucid.app/lucidchart/75191631-9583-480d-a219-dc83a353b7ac/edit?viewport_loc=-475%2C-268%2C616%2C837%2C0_0&invitationId=inv_0930e06b-1d31-4655-b6f2-5794312ad87c
+* Jira --> https://shorturl.at/ndPc9
+* UML Diagram --> https://shorturl.at/54Uzv
 
 ## Prerequisites
 
