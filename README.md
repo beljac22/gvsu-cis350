@@ -6,7 +6,7 @@ Project description (~1 paragraph)
 
 - Hunter Morningstar (Team Lead, Business Analyst)
 - [Horacio Vasquez](https://github.com/HoracioVV/CIS350-HW2-Vasquez) (Front-End Developer, Software Tester)
-- Jack Bellgowan (Back-End Developer)
+- [Jack Bellgowan](https://github.com/beljac22/CIS350-HW2-Bellgowan) (Back-End Developer)
 
 ## Group Links (Temporary)
 
