@@ -1,5 +1,5 @@
 #Overview
-This is the software requirements specification. It is a list of all the functions our program is expected to perfrom well during it's lifecycle. This is subject to change, and goes over all of the functional and non-functional requirements for our project. There should be at least 30 features in total in here at the end of the semester, and each item must be implemented correctly.  
+This is the software requirements specification. It is a list of all the functions our program is expected to perfrom well during it's lifecycle. This is subject to change, and goes over all of the functional and non-functional requirements for our project. There should be at least 30 features in total in here at the end of the semester, and each item must be implemented correctly.   
 
 #Functional Requirements
 1. User Login
