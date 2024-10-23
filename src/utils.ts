@@ -5,15 +5,18 @@ export class Remedy {
     private touch_free_rating: number
     private readonly capacity: number
     private readonly comments: Comment[]
+    private readonly building: Building
 
-    public constructor(name: string, clean_rating: number, accessability_rating: number, touch_free_rating: number, capacity: number, comments: Comment[]) {
+    public constructor(name: string, clean_rating: number, accessability_rating: number, touch_free_rating: number, capacity: number, comments: Comment[], building: Building) {
         this.name = name;
         this.clean_rating = clean_rating;
         this.accessability_rating = accessability_rating;
         this.touch_free_rating = touch_free_rating;
         this.capacity = capacity;
         this.comments = comments
+        this.building = building
     }
+
     public getName(): string {
         return this.name
     }
@@ -36,6 +39,10 @@ export class Remedy {
     
     public getComments(): Comment[]{
         return this.comments
+    }
+
+    public getBuildingName(): Building{
+        return this.building
     }
 
     public updateCleanlinessRating(new_rating: number): boolean {
@@ -69,6 +76,16 @@ export class User{
         this.email = email;
         this.api_key = api_key;
     }
+
+    public getToken(): string {
+        return this.api_key
+    }
+    public getEmail(): string {
+        return this.email
+    }
+    public getUsername(): string {
+        return this.username
+    }
 }
 
 export class Comment{
@@ -89,6 +106,36 @@ export class Comment{
     }
 }
 
+export class Building{
+    private readonly name: string
+    private readonly longitude: number
+    private readonly latitude: number
+    private readonly description: string
+
+
+    public constructor(name: string, longitude: number, latitude: number, description: string){
+        this.name = name
+        this.longitude = longitude
+        this.latitude = latitude
+        this.description = description
+    }
+    public getName(): string{
+        return this.name
+    }
+
+    public getLongitude(): number{
+        return this.longitude
+    }
+
+    public getLatitude(): number{
+        return this.latitude
+    }
+
+    public getDescription(): string{
+        return this.description
+    }
+}
+/*
 import {createInterface} from "readline";
 
 const rl = createInterface({
@@ -99,4 +146,4 @@ const rl = createInterface({
 const question = (questionText: string) =>
     new Promise<string>(resolve => rl.question(questionText, resolve));
 
-export default question;
+export default question;*/
