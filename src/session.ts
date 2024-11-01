@@ -32,14 +32,12 @@ export class Session{
         this.user = new User(user,response_body.email,response_body.bearer_token)
         this.logged_in = true
         console.log("Logged in successfully.")
-        this.updateRemedies()
+        await this.updateRemedies()
         return true
     }
     
 
     public async login(user: string, passw: string): Promise<boolean> {
-        //This is there we would send a login request to SQLite Cloud,
-        // but I don't feel like implementing that right now lmao
 
         //PLACEHOLDER
         if (this.logged_in){
@@ -61,7 +59,7 @@ export class Session{
         this.user = new User(user,response_body.email,response_body.bearer_token)
         this.logged_in = true
         console.log("Logged in successfully.")
-        this.updateRemedies()
+        await this.updateRemedies()
         return true
     }
 
@@ -77,53 +75,58 @@ export class Session{
     public getLoggedIn(): boolean{
         return this.logged_in
     }
-    public updateRemedies(): boolean{
+    public async updateRemedies(): Promise<any> {
+        const mackinaw = new Building("Mackinaw Hall", 42.9641, 85.8890, "This place is confusing")
         if (!this.getLoggedIn()){
             return false
         }
         this.remedies = []
         
+        var response = await fetch("https://cuyq5gkgnk.sqlite.cloud:8090/v2/functions/get_remedies", {method: 'POST'})
+        if (!response.ok) {
+            throw new Error("Failed to connect to server")}
+        ((await response.json()).result).forEach(remedy => {
+            const comment_list: Comment[] = []
+            remedy.comments.forEach((comment) => {
+                const my_comment = new Comment(comment.author,comment.text)
+                comment_list.push(my_comment)
+            })
+            this.remedies.push(new Remedy(remedy.name, remedy.average_rating, remedy.capacity, comment_list, mackinaw))
+        });{
+        } return true
+        
         //PLACEHOLDER
-        var mackinaw = new Building("Mackinaw Hall", 42.9641, 85.8890, "This place is confusing")
 
-        var remedy1: Remedy = new Remedy("Bathroom 1",5,5,4.5,20, [new Comment("User1","W Bathroom")], mackinaw)
-        var remedy2: Remedy = new Remedy("Bathroom 2",3,3.5,3,30, [new Comment("User2","I mean it's alright")],mackinaw)
-        var remedy3: Remedy = new Remedy("Bathroom 3",1.5,1,1,60, [new Comment("User3","THIS PLACE SUCKS!!")], mackinaw)
+        //var remedy1: Remedy = new Remedy("Bathroom 1",5,5,4.5,20, [new Comment("User1","W Bathroom")], mackinaw)
+        //var remedy2: Remedy = new Remedy("Bathroom 2",3,3.5,3,30, [new Comment("User2","I mean it's alright")],mackinaw)
+        //var remedy3: Remedy = new Remedy("Bathroom 3",1.5,1,1,60, [new Comment("User3","THIS PLACE SUCKS!!")], mackinaw)
 
-        this.remedies.push(remedy1)
-        this.remedies.push(remedy2)
-        this.remedies.push(remedy3)
+        //this.remedies.push(remedy1)
+        //this.remedies.push(remedy2)
+        //this.remedies.push(remedy3)
         return true
     }
 
-    public postCleanRating(remedy_id: string, rating: number): boolean{
-        //The rating should be a number n where .5 <= n <= 5 and n %.5 =0
+    public async postRating(remedy_id: number, rating: number): Promise<boolean> {
         if (!this.getLoggedIn()){
-            return false
-        }
-        console.log(`I sent a POST request to post a rating or comment`)
+            throw new Error ("User is not logged in.")}
+        var response = await fetch("https://cuyq5gkgnk.sqlite.cloud:8090/v2/functions/post_rating", {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                    "rating": rating, // float 
+                    "post_id": remedy_id, // int
+                    "bearer_token": `${this.user.getToken()}` //string
+                    }
+                )})
+        if ((await response).status == 500) {
+            throw new Error((await response.json()).error.title)}
         return true
     }
 
-    public postAccessabilityRating(remedy_id: string, rating: number): boolean{
-        //The rating should be a number n where .5 <= n <= 5 and n %.5 =0
-        if (!this.getLoggedIn()){
-            return false
-        }
-        console.log(`I sent a POST request to post a rating or comment`)
-        return true
-    }
-
-    public postTouchFreeRating(remedy_id: string, rating: number): boolean{
-        //The rating should be a number n where .5 <= n <= 5 and n %.5 =0
-        if (!this.getLoggedIn()){
-            return false
-        }
-        console.log(`I sent a POST request to post a rating or comment`)
-        return true
-    }
-
-    public async postComment(remedy_id: string, comment: string): Promise<boolean> {
+    public async postComment(remedy_id: number, comment: string): Promise<boolean> {
         if (!this.getLoggedIn()){
             throw new Error ("User is not logged in.")}
         var response = await fetch("https://cuyq5gkgnk.sqlite.cloud:8090/v2/functions/post_comment", {
