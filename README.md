@@ -12,6 +12,7 @@ Project description (~1 paragraph)
 
 - Jira --> https://shorturl.at/ndPc9
 - UML Diagram --> https://shorturl.at/54Uzv
+- Gantt Chart --> https://shorturl.at/MW6oA
 
 ## Prerequisites
 
