@@ -29,8 +29,8 @@
   - Expected Time to Complete:
     - 20 HOURS (Continuous aswell)
   - Responsible (person in charge):
-    - Hunter Morningstar
-<br\>
+    - Hunter Morningstar<br/>
+    
 ## Incomplete -
 - Name: UML Diagrams Created
   - Description:
