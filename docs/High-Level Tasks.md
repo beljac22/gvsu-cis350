@@ -31,13 +31,13 @@
   - Responsible (person in charge):
     - Name
 ## Incomplete -
-- Name: Task Name TBD
+- Name: UML Diagrams Created
   - Description:
-    - asdfasdf\
+    - This includes the use case, class, communication, and sequence diagrams.
   - Expected Time to Complete:
-    - X HOURS (where X is an integer)
+    - 15 HOURS
   - Responsible (person in charge):
-    - Name
+    - Hunter Morningstar
    
 - Name: Task Name TBD
   - Description:
