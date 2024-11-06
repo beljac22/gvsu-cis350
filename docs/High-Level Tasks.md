@@ -23,13 +23,14 @@
   - Responsible (person in charge):
     - Jack Bellgowan
 
-- Name: Task Name TBD
+- Name: Task Tracking Documentation
   - Description:
-    - asdfasdf\
+    - This will include Gantt Charts, Burn-up/down Charts, and the Jira Board
   - Expected Time to Complete:
-    - X HOURS 
+    - 20 HOURS (Continuous aswell)
   - Responsible (person in charge):
-    - Name
+    - Hunter Morningstar
+<br\>
 ## Incomplete -
 - Name: UML Diagrams Created
   - Description:
@@ -39,18 +40,18 @@
   - Responsible (person in charge):
     - Hunter Morningstar
    
-- Name: Task Name TBD
+- Name: CLI Functionality Testing
   - Description:
-    - asdfasdf\
+    - Testing for the CLI functionality.
   - Expected Time to Complete:
-    - X HOURS (where X is an integer)
+    - 5 HOURS
   - Responsible (person in charge):
-    - Name
+    - Hunter Morningstar
 
-- Name: Task Name TBD
+- Name: UI Functionality Testing
   - Description:
-    - asdfasdf\
+    - Testing for the UI functionality.
   - Expected Time to Complete:
-    - X HOURS (where X is an integer)
+    - 5 HOURS
   - Responsible (person in charge):
-    - Name
+    - Hunter Morningstar
