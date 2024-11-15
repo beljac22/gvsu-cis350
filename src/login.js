@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { SESSION } from "./App.js"
 // import LoginImage from 'https://t4.ftcdn.net/jpg/02/18/88/23/360_F_218882329_ZsfpJDtFWKvwnRewvzr80z551IrXvnTK.jpg'
 
 function LoginPg() {
@@ -61,5 +62,12 @@ function LoginPg() {
         
     );
 };
+
+try{
+    await SESSION.login("username","password")
+    SESSION.logout()
+} catch {
+    // login attemp again
+}
  
 export default LoginPg;

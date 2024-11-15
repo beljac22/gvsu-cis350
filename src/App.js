@@ -16,7 +16,6 @@ import { useState, useEffect, useRef } from "react";
 import CrrtM from './hbmenu&carrot/fltrbutton.js';
 import FltrButton from './hbmenu&carrot/fltrbutton.js';
 import { Session } from './session.ts';
-import { Comment } from './utils.ts';
 // import React from "react";
 
 function commentaftersubmitting() {
@@ -33,7 +32,22 @@ function commentaftersubmitting() {
 
 }
 
-
+export const SESSION = new Session();
+var my_rating = 5
+try{
+  await SESSION.postRating(1,my_rating)
+  // rating was successful
+} catch {
+  // rating was not successful if this line is ran
+}
+try{
+  await SESSION.updateRemedies() // updates SESSION to include updated remedy info
+} catch {
+  // request could not be sent for any reason
+}
+SESSION.getRemedies()[0].getComments()[0]. // this line gets all comments for the remedy at index zero
+SESSION.getRemedies()[0].getBuildingName() == "Mackinaw"
+SESSION.getRemedies()[0].getName()
 
 function App() {
 
@@ -41,12 +55,9 @@ function App() {
   // for (let i = 0; i < 5; i++) {
   //   arr.push("Hello GV Peeps", <br/>, "Enjoy your time here", <br/>)
   // }
-
   const [value, setValue] = useState('');
-  const [listofcomments, setListofcomments] = useState([])
-  // const inputRef = useRef(null);
+  await SESSION.postComment(1,"F u")
 
-  const clicktopost = () => {
     setListofcomments((listofcomments) => [value, <br></br>, ...listofcomments])
   }
 
@@ -156,7 +167,7 @@ function App() {
     const toggleCommentbtn9 = () =>{
       setCommentOpen9(!commentOpen9)
     }
-
+  
   const [commentOpen10, setCommentOpen10] = useState(false);
 
     const toggleCommentbtn10 = () =>{
@@ -202,6 +213,8 @@ function App() {
 
       {/* Area for First Bathroom Review */}
 
+      {SESSION.getRemedies()} {/* THIS IS AN EXAMPLE*/}
+      
       <Element name="MacBuilding"> {/* This element is used to reference the link that scrolls to that part of page */}
       <h1>Mackinac Building</h1>
       </Element>
