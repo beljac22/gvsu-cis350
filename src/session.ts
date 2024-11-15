@@ -1,7 +1,7 @@
-import { Remedy } from "./utils"
-import { User } from "./utils"
-import { Comment } from "./utils"
-import { Building } from "./utils"
+import { Remedy } from "./utils.ts"
+import { User } from "./utils.ts"
+import { Comment } from "./utils.ts"
+import { Building } from "./utils.ts"
 
 export class Session{
     private user: User;
@@ -127,8 +127,8 @@ export class Session{
     }
 
     public async postComment(remedy_id: number, comment: string): Promise<boolean> {
-        if (!this.getLoggedIn()){
-            throw new Error ("User is not logged in.")}
+        // if (!this.getLoggedIn()){
+        //     throw new Error ("User is not logged in.")}
         var response = await fetch("https://cuyq5gkgnk.sqlite.cloud:8090/v2/functions/post_comment", {
             method: 'POST',
             headers: {
@@ -145,3 +145,18 @@ export class Session{
         return true
     }
 }
+
+// var sess = new Session()
+// sess.login("HoracioV","Youngin2323")
+// // sess.updateRemedies()
+// sess.getUser()
+// sess.getRemedies()
+// sess.getLoggedIn()
+// sess.updateRemedies()
+// sess.postComment(3, "This bathroom is neat!!")
+// new Session().getUser()
+// new Session().login("HoracioV","Youngin2323")
+// new Session().getUser()
+// // new Session().getLoggedIn()
+// // new Session().getUser()
+// new Session().postComment(3, "This bathroom is neat!!")

@@ -106,3 +106,15 @@ export class Building{
         return this.description
     }
 }
+/*
+import {createInterface} from "readline";
+
+const rl = createInterface({
+    input: process.stdin, //this will not crash the application I promise trust me bro
+    output: process.stdout
+});
+
+const question = (questionText: string) =>
+    new Promise<string>(resolve => rl.question(questionText, resolve));
+
+export default question;*/
