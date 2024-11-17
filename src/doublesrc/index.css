@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  /* background-image: url(https://t4.ftcdn.net/jpg/02/18/88/23/360_F_218882329_ZsfpJDtFWKvwnRewvzr80z551IrXvnTK.jpg); */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* .Loginbgimage {
+  background-image: url('https://t4.ftcdn.net/jpg/02/18/88/23/360_F_218882329_ZsfpJDtFWKvwnRewvzr80z551IrXvnTK.jpg');
+
+} */
