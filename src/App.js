@@ -16,7 +16,6 @@ import { useState, useEffect, useRef } from "react";
 import CrrtM from './hbmenu&carrot/fltrbutton.js';
 import FltrButton from './hbmenu&carrot/fltrbutton.js';
 import { Session } from './session.ts';
-import { Comment } from './utils.ts';
 // import React from "react";
 
 function commentaftersubmitting() {
@@ -32,6 +31,23 @@ function commentaftersubmitting() {
   document.getElementById("newcomnt").nodeValue = "";
 
 }
+
+export const SESSION = new Session();
+var my_rating = 5
+try{
+  await SESSION.postRating(1,my_rating)
+  // rating was successful
+} catch {
+  // rating was not successful if this line is ran
+}
+try{
+  await SESSION.updateRemedies() // updates SESSION to include updated remedy info
+} catch {
+  // request could not be sent for any reason
+}
+SESSION.getRemedies()[0].getComments()[0]. // this line gets all comments for the remedy at index zero
+SESSION.getRemedies()[0].getBuildingName() == "Mackinaw"
+SESSION.getRemedies()[0].getName()
 
 
 
