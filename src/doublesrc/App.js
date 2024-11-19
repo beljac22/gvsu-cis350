@@ -16,8 +16,6 @@ import { useState, useEffect, useRef } from "react";
 import CrrtM from './hbmenu&carrot/fltrbutton.js';
 import FltrButton from './hbmenu&carrot/fltrbutton.js';
 import { Session } from './session.ts';
-import { Comment } from './utils.ts';
-// import React from "react";
 
 function commentaftersubmitting() {
   
@@ -55,6 +53,14 @@ function App() {
   const handleChange = (event) => {
     setValue(event.target.value);
   }
+
+  const [ratepgOpen3, setratepgOpen3] = useState(false);
+
+    const toggleratebtn3 = () =>{
+      setratepgOpen3(!ratepgOpen3)
+    }
+
+
 
   // useEffect(() => {
 
@@ -232,7 +238,9 @@ function App() {
       Average Rating: 4 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
 
@@ -325,7 +333,9 @@ function App() {
       Average Rating: 3 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -451,7 +461,9 @@ function App() {
       Average Rating: 3.5 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -571,7 +583,9 @@ function App() {
       Average Rating: 3.9 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -690,7 +704,9 @@ function App() {
       Average Rating: 4.5 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -811,7 +827,9 @@ function App() {
       Average Rating: 2 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -932,7 +950,9 @@ function App() {
       Average Rating: 2 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -1052,7 +1072,9 @@ function App() {
       Average Rating: 2 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -1170,7 +1192,9 @@ function App() {
       Average Rating: 2 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
