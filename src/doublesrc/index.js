@@ -12,6 +12,7 @@ import {
 import ReviewPg from './pages/review';
 import LoginPg from './pages/login';
 import AboutPg from './pages/about';
+import RatingPg from './pages/rate';
 
 // Router is for proper functioning of links/paths in the navigation bar
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <LoginPg/>,
+  },
+  {
+    path: "rate",
+    element: <RatingPg/>,
   },
 ]);
 
