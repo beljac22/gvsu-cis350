@@ -77,9 +77,6 @@ export class Session{
     }
     public async updateRemedies(): Promise<any> {
         const mackinaw = new Building("Mackinaw Hall", 42.9641, 85.8890, "This place is confusing")
-        if (!this.getLoggedIn()){
-            return false
-        }
         this.remedies = []
         
         var response = await fetch("https://cuyq5gkgnk.sqlite.cloud:8090/v2/functions/get_remedies", {method: 'POST'})
