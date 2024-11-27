@@ -1,6 +1,6 @@
 # Team Remedy
 
-Project description (~1 paragraph)
+This project is a website to allow users to rate bathrooms across Grand Valley. SQLite is used for the relational database management system, and the front end is written in React JavaScript.
 
 ## Team Members and Roles
 
