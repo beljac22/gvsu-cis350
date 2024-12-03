@@ -7,21 +7,19 @@ Team members: Horacio Vasquez, Jack Bellgowan, Hunter Morningstar
 (In 2-4 paragraphs, describe your project concept)
 (Also define some loosely defined features of your project using bullet points)
 
-We're going to create a website where students can review restrooms in Grand Valley. Our rating system will be a 5-point scale. The reviews will be predicated in things like cleanliness, capacity, etc. People that aren't affiliated with GVSU can't create reviews. People will have to sign in to their gvsu account.
+We're going to create a website where students can review restrooms in Grand Valley. Our rating system will be a 5-star scale. The reviews will be predicated on an average of user star ratings. People that are not affiliated with GVSU can't create reviews. People will have to sign in to their gvsu account.
 
 Before someone releases their review, they have the option to be anonymous or known. The website will have sections like the home page, contact page, etc. There will be a search engine to find reviews for specific restrooms. You can also use the search tool to find specific star ratings like 3 for example. We'll also create a map that highlights the restrooms and whey they're located, but this is optional for now.
 
 # Anticipated Technologies
 
-(What technologies are needed to build this project)
-
 The use of Typescript, SQL, and React.
 
 # Method/Approach
 
-We are using an agile methodology, and splitting up the work in order to make sure everything is getting done.
+We are using a Jira board to track our progress using an Agile methodology. The Jira board lists tasks pertaining to different portions of the project. These portions are given the labels Back-End Development, Front-End Development, or Documentation. Another label given would be if the tasks pertain to Development as a whole, GitHub, or Testing.
 
-(What is your estimated "plan of attack" for developing this project)
+As described in other documents, these portions of the project are divided among the different members of the group. The development is handled by Horacio (front-end) and Jack (back-end), while the documentation and testing is handled by Hunter.
 
 # Estimated Timeline
 
