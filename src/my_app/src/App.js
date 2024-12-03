@@ -16,35 +16,67 @@ import { useState, useEffect, useRef } from "react";
 import CrrtM from './hbmenu&carrot/fltrbutton.js';
 import FltrButton from './hbmenu&carrot/fltrbutton.js';
 import { Session } from './session.ts';
-import { Comment } from './utils.ts';
-// import React from "react";
+import { raterate } from './pages/rate.js';
+import { Rate } from "antd"
+import { Remedy } from './utils.ts';
+// import CommentInputVal from './components/cmtvalue.js'
 
-function commentaftersubmitting() {
-  
-  const newcomnt = document.getElementById("newcomment-text").nodeValue;
 
-  const reviewcmtbox = document.getElementById("revboxcontainer");
+const SESSION = new Session();
+// let oop = await SESSION
+await SESSION.updateRemedies()
 
-  const elementforcommnts = document.createElement("div");
-  elementforcommnts.innerText = newcomnt;
+// SESSION.getRemedies()
 
-  reviewcmtbox.appendChild(elementforcommnts);
-  document.getElementById("newcomnt").nodeValue = "";
+// console.log(SESSION.getRemedies())
 
-}
-export const SESSION = new Session();
-
+// const [value, setValue] = useState('');
 
 function App() {
 
-  // let arr = []
-  // for (let i = 0; i < 5; i++) {
-  //   arr.push("Hello GV Peeps", <br/>, "Enjoy your time here", <br/>)
+  
+  // console.log(JSON.parse("value"))
+  // let lllist = [value]
+
+  // let o
+  // let stringifyiteration
+  // // let parseiteration
+  // let stringifysetteriteration
+  // let parsesetteriteration
+
+  // for (o = 1; o < SESSION.getRemedies().length + 1; o++) {
+  //   stringifyiteration = "value" + JSON.stringify(o)
+  //   stringifysetteriteration = "setValue" + JSON.stringify(o)
+  //   // parseiteration = parse(stringifyiteration)
+  //   // console.log(parseiteration)
+  //   // console.log(parseiteration)
+  //   const [lllist[0], setlllist[0]] = useState('');
   // }
+  
+
 
   const [value, setValue] = useState('');
+  const [value2, setValue2] = useState('');
+  const [value3, setValue3] = useState('');
+  const [value4, setValue4] = useState('');
+  const [value5, setValue5] = useState('');
+  const [value6, setValue6] = useState('');
+  const [value7, setValue7] = useState('');
+  const [value8, setValue8] = useState('');
+  const [value9, setValue9] = useState('');
+  const [value10, setValue10] = useState('');
+  const [value11, setValue11] = useState('');
+  const [value12, setValue12] = useState('');
+  const [value13, setValue13] = useState('');
+  const [value14, setValue14] = useState('');
+  const [value15, setValue15] = useState('');
+  const [value16, setValue16] = useState('');
+  const [value17, setValue17] = useState('');
+  const [value18, setValue18] = useState('');
+
   const [listofcomments, setListofcomments] = useState([])
   // const inputRef = useRef(null);
+  // const [commentId, setCommentId] = useState(0);
 
   const clicktopost = () => {
     setListofcomments((listofcomments) => [value, <br></br>, ...listofcomments])
@@ -55,45 +87,120 @@ function App() {
   const handleChange = (event) => {
     setValue(event.target.value);
   }
+  const handleChange2 = (event) => {
+    setValue2(event.target.value);
+  }
+  const handleChange3 = (event) => {
+    setValue3(event.target.value);
+  }
+  const handleChange4 = (event) => {
+    setValue4(event.target.value);
+  }
+  const handleChange5 = (event) => {
+    setValue5(event.target.value);
+  }
+  const handleChange6 = (event) => {
+    setValue6(event.target.value);
+  }
+  const handleChange7 = (event) => {
+    setValue7(event.target.value);
+  }
+  const handleChange8 = (event) => {
+    setValue8(event.target.value);
+  }
+  const handleChange9 = (event) => {
+    setValue9(event.target.value);
+  }
+  const handleChange10 = (event) => {
+    setValue10(event.target.value);
+  }
+  const handleChange11 = (event) => {
+    setValue11(event.target.value);
+  }
+  const handleChange12 = (event) => {
+    setValue12(event.target.value);
+  }
+  const handleChange13 = (event) => {
+    setValue13(event.target.value);
+  }
+  const handleChange14 = (event) => {
+    setValue14(event.target.value);
+  }
+  const handleChange15 = (event) => {
+    setValue15(event.target.value);
+  }
+  const handleChange16 = (event) => {
+    setValue16(event.target.value);
+  }
+  const handleChange17 = (event) => {
+    setValue17(event.target.value);
+  }
+  const handleChange18 = (event) => {
+    setValue18(event.target.value);
+  }
 
-  // useEffect(() => {
+ 
 
-  // var yy = document.getElementById("submitcomment");
+  const [ratepgOpen3, setratepgOpen3] = useState(false);
 
-  // yy.addEventListener("click", function () {
+    const toggleratebtn3 = () =>{
+      setratepgOpen3(!ratepgOpen3)
+    }
+
+  var unk = []
+
+  let y
+  let j
+  let cmtarr = []
+  let testcomment
+  let revealcomment
+  let innerlist = []
+  // let addtostring = ""
+
+  for (y = 0; y < SESSION.getRemedies().length; y++) {
+    testcomment = SESSION.getRemedies()[y]
+    for (j = 0; j < testcomment.getComments().length; j++) {
+      revealcomment = testcomment.getComments()[j].getText()
+      innerlist.push(revealcomment)
+      innerlist.push(<br></br>)
+      innerlist.push(<br></br>)
+      // addtostring += revealcomment + '\n'
+      // cmtarr.push(revealcomment)
+    }
+
+    innerlist.reverse()
     
+    cmtarr.push(innerlist)
+    innerlist = []
+    // addtostring = ""
+  }
 
-  // const newcomnt = document.getElementById("newcomment-text").value;
+  console.log(cmtarr)
+  console.log('hello\nworld')
 
-  // const reviewcmtbox = document.getElementById("revboxcontainer");
+  
+  let avgr
 
-  // const elementforcommnts = document.createElement("div");
-  // elementforcommnts.innerText = newcomnt;
+  let i
+  let arr = []
 
-  // reviewcmtbox.appendChild(elementforcommnts);
-  // document.getElementById("newcomnt").value = "";
-  // });
+  for (i = 0; i < SESSION.getRemedies().length; i++) {
+    if (SESSION.getRemedies()[i].getAvgRating() == null) {
+      avgr = 0
+      arr.push(avgr)
+      unk[i] = "No Ratings Posted Yet"
+    }
+    else {
+      avgr = SESSION.getRemedies()[i].getAvgRating()
+      arr.push(avgr)
+      unk[i] = ""
+    }
+  }
 
-  // });
 
 
 
 
-  // var yy = document.getElementById("submitcomment");
-
-  // yy.addEventListener("click", useEffect(() => {
-    
-
-  // const newcomnt = document.getElementById("newcomment-text").value;
-
-  // const reviewcmtbox = document.getElementById("revboxcontainer");
-
-  // const elementforcommnts = document.createElement("div");
-  // elementforcommnts.innerText = newcomnt;
-
-  // reviewcmtbox.appendChild(elementforcommnts);
-  // document.getElementById("newcomnt").value = "";
-  // }));
 
   const [filtermenuOpen, setfiltermenuOpen] = useState(false);
 
@@ -163,22 +270,102 @@ function App() {
       setCommentOpen10(!commentOpen10)
     }
 
+  const [commentOpen11, setCommentOpen11] = useState(false);
 
-  // var yy = document.getElementById("submitcomment");
-  
-  // yy.addEventListener("click", useEffect(() => {
-    
+    const toggleCommentbtn11 = () =>{
+      setCommentOpen11(!commentOpen11)
+    }
 
-  // const newcomnt = document.getElementById("newcomment-text").value;
+  const [commentOpen12, setCommentOpen12] = useState(false);
 
-  // const reviewcmtbox = document.getElementById("revboxcontainer");
+    const toggleCommentbtn12 = () =>{
+      setCommentOpen12(!commentOpen12)
+    }
 
-  // const elementforcommnts = document.createElement("div");
-  // elementforcommnts.innerText = newcomnt;
+  const [commentOpen13, setCommentOpen13] = useState(false);
 
-  // reviewcmtbox.appendChild(elementforcommnts);
-  // document.getElementById("newcomnt").value = "";
-  // }));
+    const toggleCommentbtn13 = () =>{
+      setCommentOpen13(!commentOpen13)
+    }
+
+  const [commentOpen14, setCommentOpen14] = useState(false);
+
+    const toggleCommentbtn14 = () =>{
+      setCommentOpen14(!commentOpen14)
+    }
+
+  const [commentOpen15, setCommentOpen15] = useState(false);
+
+    const toggleCommentbtn15 = () =>{
+      setCommentOpen15(!commentOpen15)
+    }
+
+    const [commentOpen16, setCommentOpen16] = useState(false);
+
+    const toggleCommentbtn16 = () =>{
+      setCommentOpen16(!commentOpen16)
+    }
+
+  const [commentOpen17, setCommentOpen17] = useState(false);
+
+    const toggleCommentbtn17 = () =>{
+      setCommentOpen17(!commentOpen17)
+    }
+
+  const [commentOpen18, setCommentOpen18] = useState(false);
+
+    const toggleCommentbtn18 = () =>{
+      setCommentOpen18(!commentOpen18)
+    }
+
+
+
+  async function submitCommentButtonPressed(commentId, commentstring) {
+
+
+    // const SESSION = new Session()
+
+    let getUU
+    let storePW
+    let getUboolean
+
+    // let stringtheEmail = JSON.parse(createEmail)
+
+    try {
+        getUU = localStorage.getItem('username')
+        storePW = localStorage.getItem('wervtnm')
+        getUboolean = JSON.parse(localStorage.getItem('loginbool'))
+
+        if (commentstring.length == 0) {
+          throw "You're answer is blank, USE WORDS"
+        }
+
+        if (getUboolean == true) {
+          if (SESSION.getLoggedIn() == true) {
+            await SESSION.postComment(commentId, commentstring)
+            await SESSION.updateRemedies()
+            window.alert('comment successfully submitted, refresh page to view')
+            return 
+          }
+
+          await SESSION.login(getUU, storePW)
+        }
+        else {
+          throw "You are not logged in!" 
+        }
+
+        await SESSION.postComment(commentId, commentstring)
+        await SESSION.updateRemedies()
+        console.log(SESSION.getRemedies())
+        window.alert('comment successfully submitted, refresh page to view')
+    }
+    catch(error) {
+        
+        window.alert(error + ' Or different error');
+        
+    }
+
+}
 
 
   return (
@@ -206,9 +393,9 @@ function App() {
       <h1>Mackinac Building</h1>
       </Element>
       
-      <Element name="F1B1Mac">
+      <Element name="F1AWingMenMac">
       <elm class="underlineBRname">
-      <h3>Bathroom F1B1Mac</h3>
+      <h3>1: Bathroom F1AWingMenMac</h3>
       </elm>
       </Element>
       {/* <br></br> */}
@@ -229,10 +416,23 @@ function App() {
       right of the stairs.
       <br></br>
       <br></br>
-      Average Rating: 4 stars
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[0]}
+      // count={0}
+      />
+      {unk[0]}
+      {/* Average Rating: {raterate} */}
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
 
@@ -245,7 +445,7 @@ function App() {
       <div class="revbox" id='revboxcontainer'>
         <div class="yyt">
           <div class="ctrrevtitle">
-            <h3>F1B1Mac Comments</h3>
+            <h3>F1AWingMenMac Comments</h3>
           </div>
           <FltrButton></FltrButton>
           {/* <button
@@ -267,12 +467,13 @@ function App() {
           value={value} onChange={handleChange}
           >
           </textarea>
+          {/* <CommentInputVal></CommentInputVal> */}
 
           <div class="arealeftofbutton">
           <button
           class="buttonedit"
           id='submitcomment'
-          onClick={clicktopost}
+          onClick={async (e) => {await submitCommentButtonPressed(1, value)}}
           >
           Submit
           </button>
@@ -281,11 +482,16 @@ function App() {
           {text}.toString()
           ))} */}
         </div>
-        {listofcomments.map((value) => (
+        {/* <p> */}
+        {cmtarr[0]} 
+        {/* </p> */}
+        
+        {/* {testcomment} */}
+        {/* {listofcomments.map((value) => (
           <div>{value}</div>
 
           // <br></br>
-        ))}
+        ))} */}
         
          
       </div>
@@ -293,6 +499,2195 @@ function App() {
 
       <br></br>
       <br></br>
+
+
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F1AWingWomenMac">
+      <elm class="underlineBRname">
+      <h3>2: Bathroom F1AWingWomenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[1]}
+      // count={0}
+      />
+      {unk[1]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F1AWingWomenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn2}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen2 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value2} onChange={handleChange2}
+          >
+          </textarea>
+          {/* <CommentInputVal></CommentInputVal> */}
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(2, value2)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[1]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+
+
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F2AWingMenMac">
+      <elm class="underlineBRname">
+      <h3>3: Bathroom F2AWingMenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[2]}
+      // count={0}
+      />
+      {unk[2]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F2AWingMenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn3}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen3 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value3} onChange={handleChange3}
+          >
+          </textarea>
+          {/* <CommentInputVal></CommentInputVal> */}
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(3, value3)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[2]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F2AWingWomenMac">
+      <elm class="underlineBRname">
+      <h3>4: Bathroom F2AWingWomenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[3]}
+      // count={0}
+      />
+      {unk[3]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F2AWingWomenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn4}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen4 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value4} onChange={handleChange4}
+          >
+          </textarea>
+          {/* <CommentInputVal></CommentInputVal> */}
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(4, value4)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[3]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F1A-BWingMenMac">
+      <elm class="underlineBRname">
+      <h3>5: Bathroom F1A-BWingMenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[4]}
+      // count={0}
+      />
+      {unk[4]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F1A-BWingMenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn5}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen5 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value5} onChange={handleChange5}
+          >
+          </textarea>
+          {/* <CommentInputVal></CommentInputVal> */}
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(5, value5)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[4]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F1A-BWingWomenMac">
+      <elm class="underlineBRname">
+      <h3>6: Bathroom F1A-BWingWomenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[5]}
+      // count={0}
+      />
+      {unk[5]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F1A-BWingWomenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn6}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen6 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value6} onChange={handleChange6}
+          >
+          </textarea>
+          {/* <CommentInputVal></CommentInputVal> */}
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(6, value6)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[5]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F1BWingMenMac">
+      <elm class="underlineBRname">
+      <h3>7: Bathroom F1BWingMenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[6].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[6]}
+      // count={0}
+      />
+      {unk[6]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F1BWingMenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn7}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen7 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value7} onChange={handleChange7}
+          >
+          </textarea>
+          {/* <CommentInputVal></CommentInputVal> */}
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(7, value7)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[6]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F1BWingWomenMac">
+      <elm class="underlineBRname">
+      <h3>8: Bathroom F1BWingWomenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[7]}
+      // count={0}
+      />
+      {unk[7]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F1BWingWomenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn8}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen8 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value8} onChange={handleChange8}
+          >
+          </textarea>
+          {/* <CommentInputVal></CommentInputVal> */}
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(8, value8)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[7]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F2BWingMenMac">
+      <elm class="underlineBRname">
+      <h3>9: Bathroom F2BWingMenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[8]}
+      // count={0}
+      />
+      {unk[8]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F2BWingMenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn9}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen9 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value9} onChange={handleChange9}
+          >
+          </textarea>
+          {/* <CommentInputVal></CommentInputVal> */}
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(9, value9)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[8]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F2BWingWomenMac">
+      <elm class="underlineBRname">
+      <h3>10: Bathroom F2BWingWomenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[9]}
+      // count={0}
+      />
+      {unk[9]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F2BWingWomenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn10}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen10 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value10} onChange={handleChange10}
+          >
+          </textarea>
+          {/* <CommentInputVal></CommentInputVal> */}
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(10, value10)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[9]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F2CWingMenMac">
+      <elm class="underlineBRname">
+      <h3>11: Bathroom F2CWingMenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[10]}
+      // count={0}
+      />
+      {unk[10]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F2CWingMenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn11}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen11 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value11} onChange={handleChange11}
+          >
+          </textarea>
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(11, value11)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[10]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F2CWingWomenMac">
+      <elm class="underlineBRname">
+      <h3>12: Bathroom F2CWingWomenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[11]}
+      // count={0}
+      />
+      {unk[11]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F2CWingWomenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn12}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen12 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value12} onChange={handleChange12}
+          >
+          </textarea>
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(12, value12)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[11]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F1DWingMenMac">
+      <elm class="underlineBRname">
+      <h3>13: Bathroom F1DWingMenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[12]}
+      // count={0}
+      />
+      {unk[12]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F1DWingMenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn13}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen13 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value13} onChange={handleChange13}
+          >
+          </textarea>
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(13, value13)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[12]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F1DWingWomenMac">
+      <elm class="underlineBRname">
+      <h3>14: Bathroom F1DWingWomenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[13]}
+      // count={0}
+      />
+      {unk[13]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F1DWingWomenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn14}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen14 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value14} onChange={handleChange14}
+          >
+          </textarea>
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(14, value14)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[13]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F2DWingMenMac">
+      <elm class="underlineBRname">
+      <h3>15: Bathroom F2DWingMenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[14]}
+      // count={0}
+      />
+      {unk[14]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F2DWingMenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn15}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen15 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value15} onChange={handleChange15}
+          >
+          </textarea>
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(15, value15)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[14]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="F2DWingWomenMac">
+      <elm class="underlineBRname">
+      <h3>16: Bathroom F2DWingWomenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[15]}
+      // count={0}
+      />
+      {unk[15]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>F2DWingWomenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn16}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen16 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value16} onChange={handleChange16}
+          >
+          </textarea>
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(16, value16)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[15]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="BasementMenMac">
+      <elm class="underlineBRname">
+      <h3>17: Bathroom BasementMenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[16]}
+      // count={0}
+      />
+      {unk[16]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>BasementMenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn17}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen17 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value17} onChange={handleChange17}
+          >
+          </textarea>
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(17, value17)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[16]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+
+      {/* Area for A-Wing Women's Bathroom Review */}
+
+      {/* <Element name="MacBuilding"> 
+      <h1>Mackinac Building</h1>
+      </Element> */}
+      
+      <Element name="BasementWomenMac">
+      <elm class="underlineBRname">
+      <h3>18: Bathroom BasementWomenMac</h3>
+      </elm>
+      </Element>
+      {/* <br></br> */}
+      <div>
+      <br></br>
+      <img
+      src={"https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"} class="imgg1" alt="first gv image" 
+      // className="alignratingtext"
+      />
+      <div class="textnextimgg1">
+      
+      <br></br>
+      <br></br>
+      <br></br>
+
+      Direction: Walk inside these doors, turn left and walk until you
+      see stairs on the left and you'll bathrooms for both sexes to the
+      right of the stairs.
+      <br></br>
+      <br></br>
+      Average Rating:
+      <Rate allowHalf style={{backgroundColor: "whitesmoke", fontSize: 40, color: "black"}}
+      disabled
+      id='rrate'
+      // value={SESSION.getRemedies()[0].getAvgRating()}
+      // value={JSON.parse(localStorage.getItem('nearh'))}
+      // value={parstars[0]}
+      value={arr[17]}
+      // count={0}
+      />
+      {unk[17]}
+      {/* Average Rating: {raterate} */}
+      <br></br>
+      <br></br>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
+      </div>
+      </div>
+
+      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div class="revbox" id='revboxcontainer'>
+        <div class="yyt">
+          <div class="ctrrevtitle">
+            <h3>BasementWomenMac Comments</h3>
+          </div>
+          <FltrButton></FltrButton>
+          {/* <button
+          class={`filtercmt ${filtermenuOpen ? 'open' : ''}`} onClick={toggleFilter}
+          >
+            filter
+          </button> */}
+
+          <div>
+            <button class="stylecmtbutton" onClick={toggleCommentbtn18}
+            // onChange={ (value) => { setCommentId(value) } }
+            // value={commentId}
+            >
+            Create Comment
+            </button>
+          </div>
+        </div>
+        <div 
+        // class="review-bxfortext"
+        class={`review-bxfortext ${commentOpen18 ? 'open' : ''}`}
+        >
+          <textarea
+          name="" id="newcomment-text" class="textinbx"
+          value={value18} onChange={handleChange18}
+          >
+          </textarea>
+
+          <div class="arealeftofbutton">
+            
+            {/* <blockforid 
+            onChange={ (value) => { setCommentId(value) } }
+            value={1}
+            value={commentId} onChange={handleCommentIdChange}
+            >
+              {commentId} */}
+              {/* {commentId = 1} */}
+            {/* </blockforid> */}
+          {/* <button class="buttonedit2">
+            sub
+          </button> */}
+          <button
+          class="buttonedit"
+          id='submitcomment'
+          onClick={async (e) => {await submitCommentButtonPressed(18, value18)}}
+          >
+          Submit
+          </button>
+          {/* ss */}
+          </div>
+          {/* {listofcomments.map((text) => (
+          {text}.toString()
+          ))} */}
+        </div>
+        {cmtarr[17]}
+        {/* {listofcomments.map((value) => (
+          <div>{value}</div>
+
+          // <br></br>
+        ))} */}
+        
+         
+      </div>
+
+
+      <br></br>
+      <br></br>
+
+
+
+
 
       {/* Area for Second Bathroom Review */}
 
@@ -325,7 +2720,9 @@ function App() {
       Average Rating: 3 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -348,12 +2745,12 @@ function App() {
           </button> */}
 
           <div>
-            <button class="stylecmtbutton" onClick={toggleCommentbtn2}>Create Comment</button>
+            <button class="stylecmtbutton">Create Comment</button>
           </div>
         </div>
         <div 
         // class="review-bxfortext"
-        class={`review-bxfortext ${commentOpen2 ? 'open' : ''}`}
+        // class={`review-bxfortext ${commentOpen2 ? 'open' : ''}`}
         >
           <textarea
           name="" id="" class="textinbx"
@@ -451,7 +2848,9 @@ function App() {
       Average Rating: 3.5 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -474,12 +2873,12 @@ function App() {
           </button> */}
 
           <div>
-            <button class="stylecmtbutton" onClick={toggleCommentbtn3}>Create Comment</button>
+            <button class="stylecmtbutton">Create Comment</button>
           </div>
         </div>
         <div 
         // class="review-bxfortext"
-        class={`review-bxfortext ${commentOpen3 ? 'open' : ''}`}
+        // class={`review-bxfortext ${commentOpen3 ? 'open' : ''}`}
         >
           <textarea
           name="" id="" class="textinbx"
@@ -571,7 +2970,9 @@ function App() {
       Average Rating: 3.9 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -594,12 +2995,12 @@ function App() {
           </button> */}
 
           <div>
-            <button class="stylecmtbutton" onClick={toggleCommentbtn4}>Create Comment</button>
+            <button class="stylecmtbutton">Create Comment</button>
           </div>
         </div>
         <div 
         // class="review-bxfortext"
-        class={`review-bxfortext ${commentOpen4 ? 'open' : ''}`}
+        // class={`review-bxfortext ${commentOpen4 ? 'open' : ''}`}
         >
           <textarea
           name="" id="" class="textinbx"
@@ -690,7 +3091,9 @@ function App() {
       Average Rating: 4.5 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -713,12 +3116,12 @@ function App() {
           </button> */}
 
           <div>
-            <button class="stylecmtbutton" onClick={toggleCommentbtn5}>Create Comment</button>
+            <button class="stylecmtbutton">Create Comment</button>
           </div>
         </div>
         <div 
         // class="review-bxfortext"
-        class={`review-bxfortext ${commentOpen5 ? 'open' : ''}`}
+        // class={`review-bxfortext ${commentOpen5 ? 'open' : ''}`}
         >
           <textarea
           name="" id="" class="textinbx"
@@ -811,7 +3214,9 @@ function App() {
       Average Rating: 2 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -834,12 +3239,12 @@ function App() {
           </button> */}
 
           <div>
-            <button class="stylecmtbutton" onClick={toggleCommentbtn6}>Create Comment</button>
+            <button class="stylecmtbutton">Create Comment</button>
           </div>
         </div>
         <div 
         // class="review-bxfortext"
-        class={`review-bxfortext ${commentOpen6 ? 'open' : ''}`}
+        // class={`review-bxfortext ${commentOpen6 ? 'open' : ''}`}
         >
           <textarea
           name="" id="" class="textinbx"
@@ -932,7 +3337,9 @@ function App() {
       Average Rating: 2 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -955,12 +3362,12 @@ function App() {
           </button> */}
 
           <div>
-            <button class="stylecmtbutton" onClick={toggleCommentbtn7}>Create Comment</button>
+            <button class="stylecmtbutton">Create Comment</button>
           </div>
         </div>
         <div 
         // class="review-bxfortext"
-        class={`review-bxfortext ${commentOpen7 ? 'open' : ''}`}
+        // class={`review-bxfortext ${commentOpen7 ? 'open' : ''}`}
         >
           <textarea
           name="" id="" class="textinbx"
@@ -1052,7 +3459,9 @@ function App() {
       Average Rating: 2 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -1075,12 +3484,12 @@ function App() {
           </button> */}
 
           <div>
-            <button class="stylecmtbutton" onClick={toggleCommentbtn8}>Create Comment</button>
+            <button class="stylecmtbutton">Create Comment</button>
           </div>
         </div>
         <div 
         // class="review-bxfortext"
-        class={`review-bxfortext ${commentOpen8 ? 'open' : ''}`}
+        // class={`review-bxfortext ${commentOpen8 ? 'open' : ''}`}
         >
           <textarea
           name="" id="" class="textinbx"
@@ -1170,7 +3579,9 @@ function App() {
       Average Rating: 2 stars
       <br></br>
       <br></br>
-      <button className="ratebutton">Rate Restroom</button>
+      <a href='/rate'>
+      <button className="ratebutton">Rate Restroom</button> 
+      </a>
       </div>
       </div>
       
@@ -1193,12 +3604,12 @@ function App() {
           </button> */}
 
           <div>
-            <button class="stylecmtbutton" onClick={toggleCommentbtn9}>Create Comment</button>
+            <button class="stylecmtbutton">Create Comment</button>
           </div>
         </div>
         <div 
         // class="review-bxfortext"
-        class={`review-bxfortext ${commentOpen9 ? 'open' : ''}`}
+        // class={`review-bxfortext ${commentOpen9 ? 'open' : ''}`}
         >
           <textarea
           name="" id="" class="textinbx"
@@ -1259,29 +3670,6 @@ function App() {
       <br></br>
       <br></br>
 
-
-
-
-
-
-
-
-
-
-      {/* <Element name="textblwpic">
-      {arr}
-      </Element> UNCOMMENT THIS*/}
-      {/* {arr} */}
-      {/* <br></br> */}
-      {/* <br></br> */}
-      {/* <Element name="KirkBuilding"> This element is used to reference the link that scrolls to that part of page */}
-      {/* <h1>Kirkhof Center</h1>
-      </Element> */}
-      {/* <img
-      src={"https://live.staticflickr.com/3313/3292349353_1b926b0b96_b.jpg"} class="imgg1" alt="2nd gv image" 
-      /> */}
-      {/* <br></br> */}
-      {/* {arr} loop of text to test scroll feature from the links in hamburger menu */}
       </div>
     </div>
   );
@@ -1291,4 +3679,8 @@ function App() {
   
 }
 
+// const Sesh = new Session();
+
 export default App;
+
+// export default SESSION;

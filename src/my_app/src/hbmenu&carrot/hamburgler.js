@@ -1,11 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, Element } from 'react-scroll';
-// import CrrtM from "./carrot";
-// import { carrotOpen } from "./carrot";
-// import { [carro] } from "./carrot"
-// import { useScrollBlock } from './';
-
-// import { useClickAway } from "react-use"
 
 export default function Hambrger() {
 
@@ -161,10 +155,81 @@ export default function Hambrger() {
                     className={`carrotmenuinHbar ${carrotOpen ? 'open' : ''}`} 
                     // class="lftaliM"
                     >
-                        <Link to="F1B1Mac" class="cursorforlinks">
-                        Bathroom F1B1Mac
+                        <Link to="F1AWingMenMac" class="cursorforlinks">
+                        1: Bathroom F1AWingMenMac
                         </Link>
-                        
+                        <br></br>
+                        <Link to="F1AWingWomenMac" class="cursorforlinks">
+                        2: Bathroom F1AWingWomenMac
+                        </Link>
+                        <br></br>
+                        <Link to="F2AWingMenMac" class="cursorforlinks">
+                        3: Bathroom F2AWingMenMac
+                        </Link>
+                        <br></br>
+                        <Link to="F2AWingWomenMac" class="cursorforlinks">
+                        4 Bathroom F2AWingWomenMac
+                        </Link>
+                        <br></br>
+
+                        <Link to="F1A-BWingMenMac" class="cursorforlinks">
+                        5: Bathroom F1A-BWingMenMac
+                        </Link>
+                        <br></br>
+                        <Link to="F1A-BWingWomenMac" class="cursorforlinks">
+                        6: Bathroom F1A-BWingWomenMac
+                        </Link>
+                        <br></br>
+                        <Link to="F1BWingMenMac" class="cursorforlinks">
+                        7: Bathroom F1BWingMenMac
+                        </Link>
+                        <br></br>
+                        <Link to="F1BWingWomenMac" class="cursorforlinks">
+                        8: Bathroom F1BWingWomenMac
+                        </Link>
+                        <br></br>
+
+                        <Link to="F2BWingMenMac" class="cursorforlinks">
+                        9: Bathroom F2BWingMenMac
+                        </Link>
+                        <br></br>
+                        <Link to="F2BWingWomenMac" class="cursorforlinks">
+                        10: Bathroom F2BWingWomenMac
+                        </Link>
+                        <br></br>
+                        <Link to="F2CWingMenMac" class="cursorforlinks">
+                        11: Bathroom F2CWingMenMac
+                        </Link>
+                        <br></br>
+                        <Link to="F2CWingWomenMac" class="cursorforlinks">
+                        12: Bathroom F2CWingWomenMac
+                        </Link>
+                        <br></br>
+
+                        <Link to="F1DWingMenMac" class="cursorforlinks">
+                        13: Bathroom F1DWingMenMac
+                        </Link>
+                        <br></br>
+                        <Link to="F1DWingWomenMac" class="cursorforlinks">
+                        14: Bathroom F1DWingWomenMac
+                        </Link>
+                        <br></br>
+                        <Link to="F2DWingMenMac" class="cursorforlinks">
+                        15: Bathroom F2DWingMenMac
+                        </Link>
+                        <br></br>
+                        <Link to="F2DWingWomenMac" class="cursorforlinks">
+                        16: Bathroom F2DWingWomenMac
+                        </Link>
+                        <br></br>
+                        <Link to="BasementMenMac" class="cursorforlinks">
+                        17: Bathroom BasementMenMac
+                        </Link>
+                        <br></br>
+                        <Link to="BasementWomenMac" class="cursorforlinks">
+                        18: Bathroom BasementWomenMac
+                        </Link>
+
                     </div>
 
                 <div 
@@ -190,13 +255,6 @@ export default function Hambrger() {
                     </Link>   
                 </div>
 
-                {/* <br></br> */}
-                
-
-                {/* <br></br> */}
-                {/* <CrrtM></CrrtM> */}
-
-
                 <div 
                 class={`carrotmenuUp ${carrotOpen3 ? 'open' : ''}`} onClick={toggleCarrot3}
                 >
@@ -219,10 +277,6 @@ export default function Hambrger() {
                     Bathroom NPod&Office
                     </Link>  
                 </div>
-
-                {/* <br></br> */}
-                {/* <CrrtM></CrrtM> */}
-
 
                 <div 
                 class={`carrotmenuUp ${carrotOpen4 ? 'open' : ''}`} onClick={toggleCarrot4}
@@ -425,14 +479,6 @@ export default function Hambrger() {
                 Text
                 </Link>
                 </elm>
-
-
-                {/* <a href="https://www.w3schools.com/" target="_blank" onClick={toggleHamburger}>Go to school</a>
-                <br></br>
-                <a href="https://www.gvsu.edu/">Go to GV Web</a> */}
-
-                {/* <br></br>
-                <a>BRoom1</a> */}
                 
                 </div>
         </div>

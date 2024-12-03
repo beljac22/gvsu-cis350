@@ -1,9 +1,14 @@
 /* import  */
 
+
 .App {
   text-align: center;
 
 }
+
+/* Rate{
+  background-color: blanchedalmond;
+} */
 
 /* Hover over the function names to see how the it's being used in js files */
 
@@ -84,17 +89,18 @@
 .dropdownlgnimgmenu {
   /* display:hamburgerOpen ? 'inline' : 'none'}; */
   background-color: black;
-  margin-left: -149px;
+  margin-left: -168px;
   top: -385px;
   /* right: -230px; */
   /* height: 109.3vh; */
   height: 40vh;
-  width: 230px;
+  width: 249px;
   position: absolute;
   z-index: 1;
   font-size: 23px;
   /* color: whitesmoke; */
   text-align: center;
+  word-wrap: break-word;
   /* left: -840px; */
   /* transition: all 0.2s linear; */
   
@@ -133,6 +139,10 @@
 .navbar-menu li a{
   text-decoration: none;
   color: black
+}
+
+.hideUserfigure {
+  z-index: -1;
 }
 
 .hamburgermenu {
@@ -177,7 +187,7 @@
 }
 
 .carrotmenuinHbar {
-  background-color: orange;
+  background-color: rgb(93, 93, 150);
   /* height: auto; */
   /* height: 109.3vh; */
   /* height: 20vh;
@@ -198,7 +208,7 @@
   left: 120px;
   /* height: 22vh; */
   /* height: auto; */
-  width: 18vw;
+  width: 23vw;
   position: relative;
   transition: all 0.07s linear;
 }
@@ -305,7 +315,7 @@
   /* pointer-events: none; */
   left: -840px;
   transition: all 0.2s linear;
-  /* z-index: 1; */
+  z-index: 1;
   /* overflow: scroll; */
   /* display: flex;
   flex-direction: column; */
@@ -368,6 +378,10 @@
   /* align-content: center; */
 }
 
+/* .AccInfoFontsize {
+  font-size: 1px;
+} */
+
 .App-logo {
   position: sticky;
   top: 44px;
@@ -399,7 +413,7 @@
 
 .underlineBRname {
   text-decoration: underline black 10px;
-  text-underline-offset: 7px;
+  text-underline-offset: 9px;
   font-family: Arial;
   /* font-style: italic; */
   /* text-un */
@@ -446,6 +460,19 @@
   width: 220px;
   height: 50px;
 }
+
+.styleratingbutton {
+  /* top: 10px; */
+  position: relative;
+  top: -5px;
+  background-color: white;
+  font-weight: bold;
+  color: rgb(93, 93, 150);
+  width: 220px;
+  height: 50px;
+}
+
+
 
 /* .btmplacement {
   /* top: 100%;
@@ -510,6 +537,121 @@
   color: whitesmoke;
   font-size: large;
 }
+
+.App-ratepg_background {
+  /* border-image: url("https://www.gvsu.edu/cms4/asset/37377CEF-E490-F165-D56EDE6B86EB6815/140612_allendale612_17[1566507621].jpg"); */
+  
+  background-color: rgb(93, 93, 150);
+  min-height: 100vh;
+  /* display: flex; */
+  text-align: center;
+  /* align-items: center; */
+  color: whitesmoke;
+  font-size: 42px;
+  position: relative;
+  /* align-items: center; */
+  align-content: center;
+  /* scroll-behavior: unset; */
+  
+} 
+
+.customizestars {
+  /* outline: none; */
+  appearance: none;
+  width: 5px;
+  
+  /* cursor: default;
+  color: whitesmoke;
+  font-size: 40px; */
+}
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css);
+
+.rating {
+  /* border: none; */
+  border-width: 20px;
+  
+  display: inline-block;
+  
+  cursor: default;
+  /* float: left; */
+}
+
+/* .rating-wrap {
+  max-width: 480px;
+  margin: auto;
+  padding: 15px;
+} */
+
+.rating > input{
+  display: none;
+}
+
+.rating > label:before {
+  content: '\f005';
+  font-family: FontAwesome;
+  display: inline-block;
+  margin: 5px;
+  /* left: px; */
+  font-size: 3rem;
+  /* align-content: center; */
+  /* cursor: pointer; */
+}
+
+.rating > label.half:before {
+  content: '\f089';
+  position: absolute;
+  /* align-content: center; */
+  
+}
+
+.rating > label {
+  float: right;
+  /* align-content: center; */
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: whitesmoke;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > input:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+  color: yellow;
+}
+
+.ratebr {
+  background-color: whitesmoke;
+}
+
+.ant-rate-star {
+  color: red;
+}
+/* .rating > label {
+  float: right;
+} */
+
+/* input.rating {
+  display: none;
+}
+
+input label:before {
+  content: '\f005';
+} */
+
+
+/* .customizestars:nth-child(1) {
+  width: 2px;
+} */
+
+/* .customizestars:hover {
+  cursor: default;
+  color: rgb(237, 237, 12);
+  font-size: 40px;
+} */
 
 .App-mbfontsize {
   font-weight: bold;
@@ -670,8 +812,24 @@ p.pl {
   border-width: 4px;
 }
 
+.buttonedit2 {
+  color: rgb(93, 93, 150);
+  font-weight: bold;
+  width: 90px;
+  position: absolute;
+  margin-top: -8px;
+  /* top: 10px; */
+  margin-left: 430px;
+  height: 45px;
+  background-color: whitesmoke;
+  outline-color: black;
+  border-width: 4px;
+}
+
 .arealeftofbutton {
   outline: none;
+  /* position: relative; */
+  /* z-index: 1; */
 }
 
 
@@ -731,6 +889,19 @@ p.pl {
   /* color: white; */
   width: 750px;
   height: 250px;
+  /* border: 5px black; */
+  /* padding: 20px; */
+}
+
+.createuserbx {
+  background: whitesmoke;
+  outline-color: rgb(93, 93, 150);
+  outline-width: 6px;
+  outline-style: solid;
+  /* outline-color: black; */
+  /* color: white; */
+  width: 750px;
+  height: 285px;
   /* border: 5px black; */
   /* padding: 20px; */
 }

@@ -1,7 +1,5 @@
 import React from "react"
 import { useState, useEffect, useRef } from "react";
-// import { Link, Element } from 'react-scroll';
-// import logo from '../logo.svg';
 
 function Navbar() {
 
@@ -38,6 +36,46 @@ function Navbar() {
         });
 
 
+    
+
+    let loginlink = "Sign In"
+        
+    let getUU
+    let storePW
+    let storeEmail
+    let getUboolean
+    let Confirmlogin = "Not Logged In"
+    let Signout = ""
+    let AccountInfo = ""
+    let Loginpage = "Sign In"
+
+    getUU = localStorage.getItem('username')
+    storePW = localStorage.getItem('wervtnm')
+    storeEmail = localStorage.getItem('EEE')
+    getUboolean = JSON.parse(localStorage.getItem('loginbool'))
+
+
+    if (getUboolean == true) {
+        Confirmlogin = "Logged In"
+        Loginpage = "Back to Login Page"
+        Signout = "Sign Out"
+        AccountInfo = ["Account Info ->",<br></br>,<br></br>,"Username: " + getUU,
+        <br></br>,"Email: " + storeEmail]
+    } 
+
+    function SignOut() {
+
+        if (Signout == "Sign Out") {
+            localStorage.removeItem('username')
+            localStorage.removeItem('wervtnm')
+            localStorage.removeItem('loginbool')
+            localStorage.removeItem('EEE')
+            // window.location.reload()
+        }
+
+    }
+
+
     return (
         <div className="navbar">
             <div className="lologo">
@@ -63,41 +101,6 @@ function Navbar() {
                 </a>
                 </li>
 
-                {/* <li>
-                <a
-                 href="/instruction"
-                 target="_blank"
-                >
-                 Instruction
-                </a>
-                </li> */}
-
-                {/* <li>
-                <a
-                 href="/review"
-                 target="_blank"
-                >
-                 Review
-                </a>
-                </li> */}
-
-                {/* <li>
-                <a
-                 href="/randomtesting"
-                 target="_blank"
-                >
-                 randomtesting
-                </a>
-                </li> */}
-
-                <li>
-                <a
-                 href="/login"
-                 target="_blank"
-                >
-                 Login
-                </a>
-                </li>
 
                 <li>
                 <div
@@ -113,28 +116,36 @@ function Navbar() {
 
                     <div class={`dropdownlgnimgmenu ${lgnimgOpen ? 'open' : ''}`}>
 
-                        {/* <Link> */}
-                        {/* <text>
-                        Hello
-                        </text> */}
-                        {/* Hello */}
-                        {/* </Link> */}
+                        <a
+                        href="/login"
+                        target="_blank"
+                        onClick={toggleLoginimg}
+                        >
+                        {Loginpage}
+                        </a>
+                        <br></br>
 
                         <a 
-                        href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_force_scrollbars"
-                        target="_blank"
+                        // href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_force_scrollbars"
+                        // target="_blank"
                         // class=""
                         >
-                        Hello
+                        {Confirmlogin}
                         </a>
                         <br></br>
                         
                         <a 
-                        href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_force_scrollbars"
-                        target="_blank"
-                        // class=""
+                        href="/"
+                        onClick={(e) => {SignOut()}}
                         >
-                        Hello
+                        {Signout}
+                        </a>
+
+                        
+                        <br></br>
+                        <a // className="AccInfoFontsize"
+                        >
+                        {AccountInfo}
                         </a>
 
                     </div>

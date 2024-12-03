@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App.js';
-import Randomtest from './pages/randomtesting.js';
-import InstructionPg from './pages/Instruction.js';
-import reportWebVitals from './reportWebVitals.js';
+import App from './App';
+import Randomtest from './pages/randomtesting';
+import InstructionPg from './pages/Instruction';
+import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import ReviewPg from './pages/review.js';
-import LoginPg from './pages/login.js';
-import AboutPg from './pages/about.js';
+import ReviewPg from './pages/review';
+import LoginPg from './pages/login';
+import AboutPg from './pages/about';
+import RatingPg from './pages/rate';
 
 // Router is for proper functioning of links/paths in the navigation bar
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <LoginPg/>,
+  },
+  {
+    path: "rate",
+    element: <RatingPg/>,
   },
 ]);
 

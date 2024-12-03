@@ -77,9 +77,9 @@ export class Session{
     }
     public async updateRemedies(): Promise<any> {
         const mackinaw = new Building("Mackinaw Hall", 42.9641, 85.8890, "This place is confusing")
-        if (!this.getLoggedIn()){
-            return false
-        }
+        // if (!this.getLoggedIn()){
+        //     return false
+        // }
         this.remedies = []
         
         var response = await fetch("https://cuyq5gkgnk.sqlite.cloud:8090/v2/functions/get_remedies", {method: 'POST'})
@@ -127,8 +127,8 @@ export class Session{
     }
 
     public async postComment(remedy_id: number, comment: string): Promise<boolean> {
-        // if (!this.getLoggedIn()){
-        //     throw new Error ("User is not logged in.")}
+        if (!this.getLoggedIn()){
+            throw new Error ("User is not logged in.")}
         var response = await fetch("https://cuyq5gkgnk.sqlite.cloud:8090/v2/functions/post_comment", {
             method: 'POST',
             headers: {
