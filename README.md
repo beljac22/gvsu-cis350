@@ -17,3 +17,8 @@ This project is a website to allow users to rate bathrooms across Grand Valley. 
 ## Prerequisites
 
 ## Run Instructions
+1. Download Repository
+2. Open src/my_app/
+3. Run "npm start"
+4. Install all of the dependencies that are listed by React if they are not already included. This can be done using "npm install \<name\>"
+5. Login with these credentials. USERNAME -> TestUser3 and PASSWORD -> pass345
