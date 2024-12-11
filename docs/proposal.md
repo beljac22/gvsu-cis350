@@ -4,12 +4,23 @@ Team members: Horacio Vasquez, Jack Bellgowan, Hunter Morningstar
 
 # Introduction
 
-(In 2-4 paragraphs, describe your project concept)
-(Also define some loosely defined features of your project using bullet points)
+Our goal is to create an app for students to leave reviews and ratings on various restrooms across Grand Valley. Our rating system will be a 5-star scale, which will display an average for each bathroom based on user submissions. Reviews/Comments can be left below a bathroom to give some specifics about the experience. Only users who have successfully created an account will be given access to creating a rating or review. Along with this, to make sure our app stays secure and free of meaningless spam, only GVSU affiliated users may create a valid account.
 
-We're going to create a website where students can review restrooms in Grand Valley. Our rating system will be a 5-star scale. The reviews will be predicated on an average of user star ratings. People that are not affiliated with GVSU can't create reviews. People will have to sign in to their gvsu account.
+We will separate bathrooms by buildings and have a structured labeling system to designate bathrooms based on floors and orientation of the building. We will also create specific instructions on how to find/enter each bathroom listed. Currently we have our sights set on detailing the bathrooms in Mackinac Hall alone simply due for time's sake, but making the app scalable to support further additions in the future if we were to continue with development and data collection.
 
-Before someone releases their review, they have the option to be anonymous or known. The website will have sections like the home page, contact page, etc. There will be a search engine to find reviews for specific restrooms. You can also use the search tool to find specific star ratings like 3 for example. We'll also create a map that highlights the restrooms and whey they're located, but this is optional for now.
+## Features
+### Essential
+* User can create an account
+* User can log in to a valid account
+* Logged in users can create and submit reviews and ratings
+* Bathrooms will display an average of a 5-star rating
+
+### Desirable
+* Only GVSU affiliated users will be able to create an account
+* All user messages will be anonymous
+
+### Optional
+* Map Functionality (inspiration from GasBuddy App)
 
 # Anticipated Technologies
 
@@ -19,17 +30,18 @@ The use of Typescript, SQL, and React.
 
 We are using a Jira board to track our progress using an Agile methodology. The Jira board lists tasks pertaining to different portions of the project. These portions are given the labels Back-End Development, Front-End Development, or Documentation. Another label given would be if the tasks pertain to Development as a whole, GitHub, or Testing.
 
-As described in other documents, these portions of the project are divided among the different members of the group. The development is handled by Horacio (front-end) and Jack (back-end), while the documentation and testing is handled by Hunter.
+As described in other documents, these portions of the project are divided among the different members of the group. Hunter will handle documentation and business analysis, Horacio will handle the front-end development and testing for the back-end, and Jack will handle the back-end development.
 
 # Estimated Timeline
-
-
-
-
-(Figure out what your major milestones for this project will be, including how long you anticipate it _may_ take to reach that point)
+* Design and Development for all major screens (User-Interface) - [Beginning of September - Middle/End of October]
+* Database Creation (Back-End) - [Beginning of September - Beginning of October]
+* Command-Line Interface (Back-End) - [Beginning of September - Beginning of October]
+* API calls for several targets: Account Creation, Login Authentication (Back-End)
+* API calls Continued: Rating and Review calls to send to database and receive from database - [Beginning of November - End of November]
+* User ability to create and submit ratings and reviews (Front + Back) - [Beginning of November - End of November]
+* Reviews and Average Ratings properly display (Front End) [Beginnning of November - End of November]
 
 # Anticipated Problems
-
-(Describe any problems you foresee that you will need to overcome)
-
-Remember this is a living document is expected to be changed as you make progress on your project.
+* Communication issues
+* Learning Frameworks and Languages that we are not familiar with
+* Integration between Front and Back End
