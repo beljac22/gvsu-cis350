@@ -68,3 +68,4 @@
   * [Initial SRS Doc](software_requirements_specification.md)
   * [Use Case Diagram](../artifacts/use_case_diagram/Use_Case_Diagram-Final.pdf)
   * [Use Case Extended Description](../artifacts/use_case_diagram/UCD_Extended_Desc.md)
+  * [Jira Board for Progression Tracking](https://remedy-team.atlassian.net/jira/software/projects/TR/boards/1?atlOrigin=eyJpIjoiNDk0OGFjZDY2N2E1NGM5MGIwN2YzMDZmYWE5ZjAxMjYiLCJwIjoiaiJ9)
