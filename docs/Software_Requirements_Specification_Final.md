@@ -64,7 +64,7 @@
   * [Proposal Doc](proposal.md)
   * [High-Level Tasks Doc](High-Level-Tasks.md)
   * [Mid-Semester Presentation](Remedy_Presentation.pdf)
-  * [Final Presentation](Team_remedy_Final_Presentation.pdf)
+  * [Final Presentation](Team_Remedy_Final_Presentation.pdf)
   * [Initial SRS Doc](software_requirements_specification.md)
   * [Use Case Diagram](../artifacts/use_case_diagram/Use_Case_Diagram-Final.pdf)
   * [Use Case Extended Description](../artifacts/use_case_diagram/UCD_Extended_Desc.md)
