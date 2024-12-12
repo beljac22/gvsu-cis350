@@ -9,10 +9,16 @@ This project is a website to allow users to rate bathrooms across Grand Valley. 
 - [Jack Bellgowan](https://github.com/beljac22/CIS350-HW2-Bellgowan) (Back-End Developer, API Developer)
 
 ## Group Links
-
-- Jira --> https://shorturl.at/ndPc9
-- UML Diagram --> https://shorturl.at/54Uzv
-- Gantt Chart --> https://shorturl.at/MW6oA
+* [Proposal Doc](proposal.md)
+* [High-Level Tasks Doc](High-Level-Tasks.md)
+* [Mid-Semester Presentation](Remedy_Presentation.pdf)
+* [Final Presentation](Team_Remedy_Final_Presentation.pdf)
+* [Initial SRS Doc](software_requirements_specification.md)
+* [Use Case Diagram](../artifacts/use_case_diagram/Use_Case_Diagram-Final.pdf)
+* [Use Case Extended Description](../artifacts/use_case_diagram/UCD_Extended_Desc.md)
+* [Class Diagram](../artifacts/Team-Remedy_Class-Diagram.png)
+* [Sequence Diagram](../artifacts/Team-Remedy_Sequence-Diagram.png)
+* [Jira Board for Progression Tracking](https://remedy-team.atlassian.net/jira/software/projects/TR/boards/1?atlOrigin=eyJpIjoiNDk0OGFjZDY2N2E1NGM5MGIwN2YzMDZmYWE5ZjAxMjYiLCJwIjoiaiJ9)
 
 ## Run Instructions
 1. Download Repository
