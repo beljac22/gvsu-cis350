@@ -1,6 +1,5 @@
 # Team Remedy
-
-This project is a website to allow users to rate bathrooms across Grand Valley. SQLite is used for the relational database management system, and the front end is written in React JavaScript.
+This project is a bathroom rating app for bathrooms across Grand Valley State University's campus. We hope that this app can be used to improve students' experiences on campus. Finding a bathroom on campus can sometimes be difficult, especially when you don't like overly messy bathrooms or a bathroom that commonly doesn't keep up with cleaning. Our goal is to provide an easy system for seeing bathrooms across the campus so our users can find suitable bathrooms for their everyday needs!
 
 ## Team Members and Roles
 
