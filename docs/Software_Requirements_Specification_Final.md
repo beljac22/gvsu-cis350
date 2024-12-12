@@ -25,11 +25,11 @@
 ### User Reviews
 | ID | Requirement |
 | :-------------: | :----------: |
-| FR6 | The user shall be able to find a specific bathroom |
-| FR7 | The user shall be able to view the reviews for a bathroom |
-| FR8 | The user shall be able to create their own reviews |
-| FR9 | The user shall be able to submit their own reviews |
-| FR10 | The user's submitted reviews shall appear in the bathroom's reviews |
+| FR11 | The user shall be able to find a specific bathroom |
+| FR12 | The user shall be able to view the reviews for a bathroom |
+| FR13 | The user shall be able to create their own reviews |
+| FR14 | The user shall be able to submit their own reviews |
+| FR15 | The user's submitted reviews shall appear in the bathroom's reviews |
 
 ## Non-Functional Requirements
 ### General
