@@ -8,13 +8,11 @@ This project is a website to allow users to rate bathrooms across Grand Valley. 
 - [Horacio Vasquez](https://github.com/HoracioVV/CIS350-HW2-Vasquez) (Front-End Developer, Software Tester)
 - [Jack Bellgowan](https://github.com/beljac22/CIS350-HW2-Bellgowan) (Back-End Developer, API Developer)
 
-## Group Links (Temporary)
+## Group Links
 
 - Jira --> https://shorturl.at/ndPc9
 - UML Diagram --> https://shorturl.at/54Uzv
 - Gantt Chart --> https://shorturl.at/MW6oA
-
-## Prerequisites
 
 ## Run Instructions
 1. Download Repository
